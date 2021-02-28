@@ -7,3 +7,4 @@ class Book(models.Model):
     link = models.CharField(max_length=4000)
     photo = models.ImageField(upload_to="images/")
     pub_date = models.DateTimeField("Date Published")
+    category = models.CharField(max_length=400)

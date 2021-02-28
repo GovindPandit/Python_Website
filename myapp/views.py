@@ -13,4 +13,8 @@ def book_by_id(request, book_id):
 
 def books(request):
     books = Book.objects.all()
-    return render(request, "book_details.html",{"books":books})
+    categories =  Book.objects.values("category").distinct()
+    return render(request, "book_details.html",{"books":books,"categories":categories})
+
+def home(request):
+    return render(request,"home.html")
